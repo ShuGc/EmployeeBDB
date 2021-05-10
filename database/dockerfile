@@ -1,0 +1,14 @@
+FROM postgres:11.2-alpine
+EXPOSE 5432
+
+ADD ./init /init_data
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=1234
+ENV  POSTGRES_DB=testCrud
+COPY  /init/ docker-entrypoint-initdb.d/
+
+
+#RUN echo "all all all all $POSTGRES_HOST_AUTH_METHOD" >> pg_hba.conf
+#RUN echo "host all all 127.0.0.1/32 md5"  >> pg_hba.conf
+
+#RUN cat pg_hba.conf
