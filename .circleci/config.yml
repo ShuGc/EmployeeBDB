@@ -29,10 +29,10 @@ jobs:
       - checkout
       - run:
           name: installDependencies
-          command: npm install
+          command: cd frontend && npm install
       - run:
           name: Build
-          command: ng build
+          command: cd frontend && ng build
 
 workflows:
   # Below is the definition of your workflow.
