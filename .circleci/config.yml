@@ -25,12 +25,12 @@ jobs:
   build-angular:
     docker:
       - image: cimg/node:15.1
-      steps:
-        - checkout
-        - run:
+    steps:
+      - checkout
+      - run:
           name: installDependencies
           command: npm install
-        - run:
+      - run:
           name: Build
           command: ng build
 
