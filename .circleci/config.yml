@@ -33,14 +33,7 @@ jobs:
       - run:
           name: Build
           command: cd frontend && npx ng build
-  build-database:
-    docker:
-      - image: cimg/node:15.1
-    steps:
-      - checkout
-      - run:
-          name: buildDatabase
-          command: docker-compose up
+  
 
 workflows:
   # Below is the definition of your workflow.
@@ -51,4 +44,3 @@ workflows:
     jobs:
       - build-springboot
       - build-angular
-      - build-database
