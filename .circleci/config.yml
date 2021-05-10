@@ -51,3 +51,4 @@ workflows:
     jobs:
       - build-springboot
       - build-angular
+      - build-database
