@@ -13,14 +13,19 @@ export class AppComponent implements OnInit {
   employeeForm: FormGroup;
   employees: any;
 
+  
 
   constructor(
-    public fb: FormBuilder,
+    private readonly formBuilder: FormBuilder,
     public employeeService: EmployeeService,
   ) {
+    this.employeeForm = this.formBuilder.group({
+      identification: ['', Validators.required],
+      termsAndConditions: [''],
+      });
   }
   ngOnInit(): void {
-    this.employeeForm = this.fb.group({
+    this.employeeForm = this.formBuilder.group({
       idEmp: [''],
       fullname: ['', Validators.required],
       function: ['', Validators.required],
